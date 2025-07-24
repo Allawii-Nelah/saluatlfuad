@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doğum günün kutlu olsun!</title>
+  <link rel="icon" href="My coins/ballon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top, #ffecd2, #fcb69f);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 30px 15px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #fff;
+      font-family: "Great Vibes", cursive;
+      font-size: 3em;
+      white-space: nowrap;
+      border-right: 3px solid rgba(255,255,255,0.75);
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .message {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 15px;
+      color: white;
+      font-size: 1.5em;
+      backdrop-filter: blur(5px);
+      animation: fadeIn 3s ease-in;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .gallery {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .gallery img {
+      width: 80%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 60px;
+      background: red;
+      border-radius: 50% 50% 45% 45%;
+      animation: float 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #fff;
+      transform: translateX(-50%);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-120vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>İyiki Doğdun Canım Merve Yokarı🎉</h1>
+  <div class="message">
+    Gönlü güzel öğretmenim,
+    <br>
+    Sizi görmeyeli geçti zaman,
+    <br>
+    Kalbimde yeriniz hep aynı,
+    <br>
+    Ne uzaklık unutturur, ne de zaman.
+    <br>
+    İyi ki varsınız, iyi ki doğdunuz.
+  </div>
+
+  <div class="message">
+    Umarım harika bir gün geçirirsin, mutluluk ve neşeyle dolu! 🥳🎂
+  </div>
+
+  <!-- قسم الصور -->
+  <div class="gallery">
+    <!-- ضع الصور هنا -->
+    
+    <img src="My coins/ysar.jpeg" alt="صورة 2">
+    <img src="My coins/ana.jpeg" alt="صورة 3">
+    <img src="My coins/yemin.jpeg" alt="صورة 4">
+  </div>
+
+  <!-- بالونات عشوائية -->
+  <script>
+    const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#FF9F1C'];
+    for (let i = 0; i < 20; i++) {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = `${Math.random() * 100}%`;
+      balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      balloon.style.animationDuration = `${6 + Math.random() * 6}s`;
+      document.body.appendChild(balloon);
+    }
+  </script>
+
+</body>
+</html>
